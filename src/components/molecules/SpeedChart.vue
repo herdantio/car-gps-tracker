@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Car's Speed Chart</h1>
-    <line-chart :chart-data="dataCollection"></line-chart>
+    <line-chart :chart-data="dataCollection" :options="options"></line-chart>
   </div>
 </template>
 
@@ -11,6 +11,20 @@ import {mapState} from 'vuex'
 
 export default {
   name: "SpeedChart",
+  data(){
+    return {
+      options: {
+        scales: {
+          yAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: 'Speed (in km/h)'
+            }
+          }]
+        }
+      }
+    }
+  },
   components:{
     LineChart
   },
