@@ -1,16 +1,14 @@
 <template>
   <GmapMarker
-      :position="{
-        lat: -6.193880,
-        lng:106.822902
-      }"
+      :position="position"
       :icon="{url: 'https://img.icons8.com/material-outlined/24/000000/car--v1.png'}"
   />
 </template>
 
 <script>
 export default {
-  name: "CarMarker"
+  name: "CarMarker",
+  props:['position']
 }
 </script>
 

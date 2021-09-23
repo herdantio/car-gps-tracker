@@ -6,7 +6,7 @@
       style="width: 100%; height: 90vh"
   >
     <gmap-polyline :path.sync="path" :options="options"></gmap-polyline>
-    <car-marker></car-marker>
+    <car-marker :position="center"></car-marker>
   </gmap-map>
 </template>
 
