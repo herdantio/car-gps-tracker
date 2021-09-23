@@ -1,8 +1,8 @@
 <template>
   <el-container>
     <el-row>
-      <el-button type="success" v-show="isStopped || isPaused" @click="startAction">Start</el-button>
-      <el-button type="primary" v-show="isRunning" @click="pauseAction">Pause</el-button>
+      <el-button type="success" v-if="isStopped || isPaused" @click="startAction">Start</el-button>
+      <el-button type="primary" v-if="isRunning" @click="pauseAction">Pause</el-button>
       <el-button type="danger" @click="stopAction">Stop</el-button>
     </el-row>
     <el-row></el-row>
@@ -31,6 +31,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
 </style>

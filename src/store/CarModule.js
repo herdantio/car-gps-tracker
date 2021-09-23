@@ -2,7 +2,7 @@ export default {
     namespaced: true,
     state:{
         maps: {
-            LatLng: {lat:-6.193880, lng:106.822902}
+            LatLng: {lat:-6.187180, lng:106.826917}
         },
         markers: {
             LatLng: {lat:-6.193880, lng:106.822902},
@@ -22,21 +22,37 @@ export default {
             }
         },
         runStatus: 'isStopped',
-        timer: {}
+        timer: {},
+        path: [
+            {lat:-6.193880, lng:106.822902},
+            {lat:-6.187004, lng:106.822923},
+            {lat:-6.183425, lng:106.822951},
+            {lat:-6.182595, lng:106.833463},
+            {lat:-6.181646, lng:106.832658},
+            {lat:-6.179086, lng:106.831810},
+            {lat:-6.176697, lng:106.831070},
+        ],
+        distance:[
+            760,
+            400,
+            1170,
+            140,
+            300,
+            280
+        ]
     },
     actions:{
         startAction({commit, state}){
             commit('startMutation')
             state.timer = setInterval(()=>{
-                state.markers.LatLng = {...state.polyLines.LatLng[state.markers.counter]}
-                if(state.markers.counter == state.polyLines.LatLng.length){
-                    clearInterval(state.timer)
-                    state.markers.counter = 0
+                state.markers.LatLng = {...state.path[state.markers.counter]}
+                if(state.markers.counter == state.path.length){
                     commit('stopMutation')
+                    clearInterval(state.timer)
                 } else {
                     state.markers.counter++
                 }
-            }, 2000)
+            }, 1000)
         },
         pauseAction({commit, state}){
             commit('pauseMutation')
@@ -44,6 +60,7 @@ export default {
         },
         stopAction({commit, state}){
             commit('stopMutation')
+            commit('resetMarkerCoordinate')
             clearInterval(state.timer)
         }
     },
@@ -55,7 +72,11 @@ export default {
             state.runStatus = 'isPaused'
         },
         stopMutation(state){
+            state.markers.counter = 0
             state.runStatus = 'isStopped'
+        },
+        resetMarkerCoordinate(state){
+            state.markers.LatLng = {...state.path[state.markers.counter]}
         }
     }
 }
