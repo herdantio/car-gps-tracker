@@ -6,7 +6,7 @@
       style="width: 100%; height: 90vh"
   >
     <gmap-polyline :path.sync="path" :options="options"></gmap-polyline>
-    <car-marker :position="center"></car-marker>
+    <car-marker :position="position"></car-marker>
   </gmap-map>
 </template>
 
@@ -22,7 +22,8 @@ export default {
     ...mapState('CarModule', {
         center: state=>state.maps.LatLng,
         path: state => state.polyLines.LatLng,
-        options: state => state.polyLines.options
+        options: state => state.polyLines.options,
+        position:state => state.markers.LatLng
   })
   }
 }
