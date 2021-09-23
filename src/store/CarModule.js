@@ -1,3 +1,4 @@
+
 export default {
     namespaced: true,
     state:{
@@ -44,13 +45,10 @@ export default {
             datasets: [{
                 label: 'Car\'s Speed',
                 data: [
-                    72,
-                    40,
-                    108,
-                    15,
-                    32,
-                    28
-                ]
+                ],
+                fill: false,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
             }]
         },
         distance:[
@@ -67,10 +65,11 @@ export default {
             commit('startMutation')
             state.timer = setInterval(()=>{
                 state.markers.LatLng = {...state.path[state.markers.counter]}
-                if(state.markers.counter == state.path.length){
+                if(state.markers.counter === state.path.length){
                     commit('stopMutation')
                     clearInterval(state.timer)
                 } else {
+                    commit('updateChart')
                     state.markers.counter++
                 }
             }, 1000)
@@ -98,6 +97,30 @@ export default {
         },
         resetMarkerCoordinate(state){
             state.markers.LatLng = {...state.path[state.markers.counter]}
+            state.chart = {
+                labels: [
+                    '12:10:10',
+                    '12:10:20',
+                    '12:10:30',
+                    '12:10:40',
+                    '12:10:50',
+                    '12:11:00'
+                ],
+                datasets: [{
+                    label: 'Car\'s Speed',
+                    data: [
+                    ],
+                    fill: false,
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }]
+            }
+        },
+        updateChart(state){
+            state.chart.datasets[0].data.push(state.distance[state.markers.counter])
+            state.chart = {
+                ...state.chart
+            }
         }
     }
 }

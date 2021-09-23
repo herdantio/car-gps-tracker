@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>Car's Speed Chart</h1>
     <line-chart :chart-data="dataCollection"></line-chart>
   </div>
 </template>
