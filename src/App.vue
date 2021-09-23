@@ -1,5 +1,7 @@
 <template>
-  <el-container></el-container>
+  <div>
+    <car-tracker></car-tracker>
+  </div>
 </template>
 
 <script>
@@ -8,7 +10,7 @@
 export default {
   name: 'App',
   components: {
-    // HelloWorld
+    CarTracker: ()=>import('./components/templates/CarTracker')
   }
 }
 </script>
