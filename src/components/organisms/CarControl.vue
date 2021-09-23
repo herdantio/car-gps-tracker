@@ -1,5 +1,5 @@
 <template>
-
+  <h1>Car Control</h1>
 </template>
 
 <script>

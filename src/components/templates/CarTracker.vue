@@ -1,14 +1,20 @@
 <template>
-  <el-container>
-    <car-maps></car-maps>
-  </el-container>
+    <el-row>
+      <el-col :span="12">
+        <car-maps></car-maps>
+      </el-col>
+      <el-col :span="12">
+        <car-control></car-control>
+      </el-col>
+    </el-row>
 </template>
 
 <script>
 export default {
   name: "CarTracker",
   components:{
-    CarMaps: ()=>import('../organisms/CarMaps')
+    CarMaps: ()=>import('../organisms/CarMaps'),
+    CarControl: ()=>import('../organisms/CarControl')
   }
 }
 </script>
