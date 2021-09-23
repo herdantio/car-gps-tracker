@@ -5,7 +5,7 @@
       map-type-id="roadmap"
       style="width: 100%; height: 90vh"
   >
-    <gmap-polyline v-bind:path.sync="path"></gmap-polyline>
+    <gmap-polyline :path.sync="path" :options="options"></gmap-polyline>
     <car-marker></car-marker>
   </gmap-map>
 </template>
@@ -21,7 +21,8 @@ export default {
   computed:{
     ...mapState('CarModule', {
         center: state=>state.maps.LatLng,
-        path: state => state.polyLines.LatLng
+        path: state => state.polyLines.LatLng,
+        options: state => state.polyLines.options
   })
   }
 }

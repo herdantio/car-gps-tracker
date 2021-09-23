@@ -14,7 +14,10 @@ export default {
                 {lat:-6.181646, lng:106.832658},
                 {lat:-6.179086, lng:106.831810},
                 {lat:-6.176697, lng:106.831070},
-            ]
+            ],
+            options:{
+                strokeColor:'#008000'
+            }
         }
     },
     actions:{},
