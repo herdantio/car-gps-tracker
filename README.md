@@ -1,6 +1,9 @@
 # car-gps-tracker
+
 Car gps tracker for technical test using vue 
 with atomic component design implementation
+
+Data displayed & updated every 10 seconds
 
 ## Project setup
 ```

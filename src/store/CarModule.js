@@ -72,7 +72,7 @@ export default {
                     commit('updateChart')
                     state.markers.counter++
                 }
-            }, 1000)
+            }, 10000)
         },
         pauseAction({commit, state}){
             commit('pauseMutation')
