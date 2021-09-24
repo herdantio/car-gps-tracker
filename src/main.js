@@ -9,6 +9,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 // import gmapvue
 import * as GmapVue from 'gmap-vue'
 
+// import scss style globally
 import './style/global-style.scss'
 
 Vue.config.productionTip = false

@@ -1,4 +1,6 @@
 # car-gps-tracker
+Car gps tracker for technical test using vue 
+with atomic component design implementation
 
 ## Project setup
 ```
