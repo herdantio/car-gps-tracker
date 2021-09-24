@@ -9,6 +9,8 @@ import 'element-ui/lib/theme-chalk/index.css';
 // import gmapvue
 import * as GmapVue from 'gmap-vue'
 
+import './style/global-style.scss'
+
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.use(GmapVue, {

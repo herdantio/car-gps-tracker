@@ -1,9 +1,9 @@
 <template>
   <gmap-map
+      id="maps"
       :center="center"
       :zoom="15"
       map-type-id="roadmap"
-      style="width: 100%; height: 97vh"
   >
     <gmap-polyline :path.sync="path" :options="options"></gmap-polyline>
     <car-marker :position="position"></car-marker>
